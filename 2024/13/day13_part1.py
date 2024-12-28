@@ -3,7 +3,6 @@ import re
 def play(game):
     max_a = max(game['Prize']['X'] // game['A']['X'], game['Prize']['Y'] // game['A']['Y'])
     max_b = max(game['Prize']['X'] // game['B']['X'], game['Prize']['Y'] // game['B']['Y'])
-    iterations = 1
     for b in range(max_b, 0, -1):
         for a in range(max_a):
             x = game['A']['X'] * a + game['B']['X'] * b
