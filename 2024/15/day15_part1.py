@@ -13,7 +13,7 @@ def move(grid, position, movement):
                 return (py, px-1)
 
     elif movement == '>':
-        for x in range(px+1, len(grid[px])):
+        for x in range(px+1, len(grid[py])):
             if grid[py][x] == '#':
                 break
 
@@ -56,7 +56,7 @@ grid = [list(line) for line in file.split('\n\n')[0].split('\n')]
 movements = file.split('\n\n')[1].replace('\n','')
 
 # Find current position
-position = next(((x, y) for y, row in enumerate(grid) for x, char in enumerate(row) if char == '@'), None)
+position = next(((y, x) for y, row in enumerate(grid) for x, char in enumerate(row) if char == '@'), None)
 
 # Apply movements
 for m in movements:
